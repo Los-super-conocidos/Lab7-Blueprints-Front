@@ -1,1 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
+#titulo{
+    text-align: center;
+}
+
+#info{
+    align-items: center;
+    border: 20px;
+    width: 50%;
+    height: 50px;
+}
+
+#canvas{
+    width: 50%;
+    margin-left: 50%;
+}
+
+#autor{
+    width: 100px;
+}
+
+#lienzo{
+    background-color: aqua;
+    align-self: center;
+}
