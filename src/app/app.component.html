@@ -1,34 +1,38 @@
 <router-outlet />
 
-<h1 id="titulo">BLUEPRINTS</h1>
+<h1 id="titulo" style="text-align: left;">BLUEPRINTS </h1>
 <form>
-  <div class="mb-3">
-    <label for="author" class="form-lable">Author's Name</label>
-    <input class="form-control" [(ngModel)]="author" name="author" id="author">
-    <button type="submit" class="btn btn-primary" (click)="obternerBlueprints()">Search</button>
+  <div class="mb-3 row">
+    <label for="author" class="col-sm-1 col-form-label custom-label h2-label">Author </label>
+    <div class="col-sm-5 d-flex align-items-center">
+      <input class="form-control me-2" [(ngModel)]="author" name="author" id="author" placeholder="Enter author's name">
+      <button type="submit" class="btn btn-primary custom-btn" (click)="obternerBlueprints()">Get blueprints</button>
+    </div>
   </div>
-  <div>
-    <div id="info">
-      <h2 id="subtitile">Author: </h2>
-      <table class="table">
+  <hr class="my-4 custom-hr">
+
+  <div style="display: flex;">
+    <div id="info" style="flex: 1;">
+      <h2 id="subtitile">{{author }}'s blueprints:</h2>
+      <table class="table table-bordered">
         <thead>
           <th scope="col">Blueprint's name</th>
           <th scope="col">Number of points</th>
           <th scope="col">Open</th>
-        </thead>
+        </thead>  
         <tbody>
           <tr *ngFor="let blueprint of blueprintsList">
             <td>{{ blueprint.name }}</td>
             <td>{{ blueprint.points.length }}</td>
-            <td><button class="btn btn-primary" (click)="getBlueprint()">Open Blueprint</button></td>
+            <td><button class="btn btn-primary" (click)="getBlueprint(blueprint.name )">Open Blueprint</button></td>
           </tr>
         </tbody>
       </table>
       <br/>
-      <h2 id="subtitile">Total user's points: {{ totalPoints}}</h2>
+      <h2 id="subtitile">Total user points: {{ totalPoints}}</h2>
     </div>
-    <div id="canvas">
-      <h2 id="subtitile">Name: {{name}}</h2>
+    <div id="canvas" style="flex: 1;">
+      <h2 id="subtitile">Current blueprint: {{nameSubtitle}}</h2>
       <div>
         <canvas id="lienzo" width="400px" height="400px" #canvasRef></canvas>
       </div>

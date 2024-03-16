@@ -1,0 +1,20 @@
+.custom-btn {
+    width: 200px; /* ajusta el ancho del botón según sea necesario */
+  }
+  .custom-label {
+    margin-bottom: 0; /* Eliminar el margen inferior del label */
+  }
+  .h2-label {
+    font-size: 1.5rem; /* Tamaño de fuente equivalente al de un h2 */
+    font-weight: bold; /* Opcional: agregar negrita */
+  }
+
+  .custom-hr {
+    border: none;
+    border-bottom: 1px solid black;
+    margin-top: -5px; /* Ajusta este valor según sea necesario */
+  }
+  #info, #canvas {
+    flex: 1;
+    margin: 10px; /* Añade un margen interno a los divs */
+  }
