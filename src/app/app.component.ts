@@ -40,7 +40,7 @@
 
   getBlueprint( name: string) {
 
-    this.blueprint.getBlueprint(this.author, name).subscribe(
+    this.blueprint.getBlueprintsByNameAndAuthor (this.author, name).subscribe(
       (response) => {
         this.drawBlueprint(response.points);
         this.nameSubtitle=name;

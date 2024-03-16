@@ -15,7 +15,7 @@
       return this.http.get<any>(this.roomApiUrl+"/"+author);
     }
 
-    getBlueprint(author:string,name:string): Observable<any>{
+    getBlueprintsByNameAndAuthor (author:string,name:string): Observable<any>{
       return this.http.get<any>(this.roomApiUrl+"/"+author+ "/" + name);
     }
   }
