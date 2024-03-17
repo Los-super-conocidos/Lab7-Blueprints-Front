@@ -1,6 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
 #titulo{
-    text-align: center;
+    margin-left: 10px;
+}
+
+#filtro{
+    margin-left: 10px;
 }
 
 #info{

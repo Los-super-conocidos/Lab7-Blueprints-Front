@@ -1,8 +1,8 @@
 <router-outlet />
 
-<h1 id="titulo" style="text-align: left;">BLUEPRINTS </h1>
+<h1 id="titulo" >BLUEPRINTS </h1>
 <form>
-  <div class="mb-3 row">
+  <div class="mb-3 row" id = "filtro">
     <label for="author" class="col-sm-1 col-form-label custom-label h2-label">Author </label>
     <div class="col-sm-5 d-flex align-items-center">
       <input class="form-control me-2" [(ngModel)]="author" name="author" id="author" placeholder="Enter author's name">
@@ -12,7 +12,7 @@
   <hr class="my-4 custom-hr">
 
   <div style="display: flex;">
-    <div id="info" style="flex: 1;">
+    <div id="info" style="flex: 1;" class="ml-3">
       <h2 id="subtitile">{{author }}'s blueprints:</h2>
       <table class="table table-bordered">
         <thead>
@@ -31,11 +31,17 @@
       <br/>
       <h2 id="subtitile">Total user points: {{ totalPoints}}</h2>
     </div>
-    <div id="canvas" style="flex: 1;">
+    <div id="canvas" style="flex: 1;" class="ml-3" >
+      <button type="submit" class="btn btn-secondary mx-3" (click)="updateOrSaveBlueprint(true)">Create New Blueprint</button>
       <h2 id="subtitile">Current blueprint: {{nameSubtitle}}</h2>
       <div>
-        <canvas id="lienzo" width="400px" height="400px" #canvasRef></canvas>
-      </div>
-    </div>
+        <canvas id="lienzo" width="400px" height="400px" #canvasRef (click)="onClick($event)"></canvas>
+        <div id="options">
+    <button type="submit" class="btn btn-success mx-3" (click)="updateOrSaveBlueprint(false)">Save/Update</button>
+    <button type="submit" class="btn btn-danger mx-3" (click)="deleteBlueprint()">Delete</button>
   </div>
+      </div>
+    </div> 
+  </div>
+  
 </form>
