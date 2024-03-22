@@ -99,6 +99,7 @@
       const respuesta = prompt("Por favor, ingrese el nombre del nuevo plano:");
       if(respuesta != null){
         this.newBlueprint  = {"author" : this.author, "name": respuesta,"points" : []};
+        this.nameSubtitle=respuesta;
         this.blueprint.addNewBlueprint(this.newBlueprint).subscribe((res)=>{
           this.obternerBlueprints();
           this.clearCanvas();
