@@ -126,6 +126,7 @@
     this.blueprint.deleteBlueprint(this.newBlueprint).subscribe((res)=>{
       this.obternerBlueprints();
       this.clearCanvas();
+      this.nameSubtitle = '';
     })
   }
 }
